@@ -1,17 +1,31 @@
 /*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
+main site
 --*/
 
 .world-banner{
 background-image: url('../video/food.jpg');
+background-size: cover;
 }
 
 body{
 	font-family: 'Lato', sans-serif;
 }
+
+.black{
+	color:black !important;
+}
+
+.b:hover{
+	color:
+	#25c3dc
+	 !important;
+}
+
+.size{
+    height: 170px !important;
+    width:100% !important;
+}
+
 p{
 	margin:0;
 	font-size:1em;
@@ -239,7 +253,7 @@ body a:hover{
     -ms-border-radius: 50%;
 }
 .callbacks_here a:after{
-    background: #eb422a;
+    background: #25c3dc;
 }
 /*-- //slider --*/
 /*-- menu-bar --*/
@@ -252,7 +266,7 @@ body a:hover{
     cursor: pointer;
     width: 40px;
     height: 40px;
-    background:#eb422a ;
+    background:#25c3dc ;
 }
 .mobile-nav-button .mobile-nav-button__line {
     width: 30px;
@@ -343,7 +357,7 @@ ul.dropdown-menu.agile_short_dropdown > li > a:hover{
 }
 .mobile-menu ul li a:after {
     content: '';
-    background: #eb422a;
+    background: #25c3dc;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -416,7 +430,7 @@ li.dropdown.act a.w3_icons_act {
     -webkit-appearance: none;
     margin-bottom: 2em;
     background: #353434;
-	border-bottom: 2px solid #eb422a;
+	border-bottom: 2px solid #25c3dc;
 }
 .agileits-login textarea {
 	resize:none;
@@ -457,7 +471,7 @@ li.dropdown.act a.w3_icons_act {
     position: relative;
 }
 input.checkbox {
-    background: #eb422a;
+    background: #25c3dc;
     cursor: pointer;
     width: 1.2em;
     height: 1.2em;
@@ -551,7 +565,7 @@ input.checkbox:checked:after {
     -webkit-appearance: none;
 	text-transform: uppercase;
     transition: .5s all;
-    background: #eb422a;
+    background: #25c3dc;
     display: inline-block;
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
@@ -560,7 +574,7 @@ input.checkbox:checked:after {
 	-ms-transition: 0.5s all;
 }
 .agileits-login input[type="submit"]:hover {
-    background:#26d797;
+    background:black;
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
 	-moz-transition: 0.5s all;
@@ -588,7 +602,7 @@ div#myModal3 {
 .book-form label i {
     font-size: 1em;
     margin-right: 10px;
-    color: #eb422a;
+    color: #25c3dc;
 }
 .book-form input[type="text"], .book-form input[type="date"], .book-form input[type="time"], .book-form input[type="email"]{
     width: 100%;
@@ -597,7 +611,7 @@ div#myModal3 {
     outline: none;
     font-size: 1em;
     padding: .7em 1em;
-    border-bottom: 2px solid #eb422a;
+    border-bottom: 2px solid #25c3dc;
     -webkit-appearance: none;
     margin-bottom: 1em;
     background: rgba(255, 255, 255, 0.75);
@@ -610,13 +624,13 @@ div#myModal3 {
     border-radius: 0;
     background: rgba(255, 255, 255, 0.75);
     color: #000;
-    border-bottom: 2px solid #FF5722;
+    border-bottom: 2px solid #25c3dc;
     box-shadow: none!important;
 	height: inherit !important;
 }
 .book-form form input[type="submit"] {
     text-transform: capitalize;
-    background: #eb422a;
+    background: #25c3dc;
     color: #FFFFFF;
     padding: .8em 3em;
     border: none;
@@ -654,7 +668,7 @@ div#myModal3 {
     padding:0!important;
 }
 .book-form input[type=submit]:hover {
-    background: #26d797;
+    background: black;
     color: #fff;
 }
 table {
@@ -740,7 +754,7 @@ h3.w3l-title {
 .w3ls-border {
     width: 21%;
     margin: 1em auto 0;
-    border: solid 2px #26d797;
+    border: solid 2px black;
 }
 .wthree-services-captn {
 	height: 100%;
@@ -750,7 +764,7 @@ h3.w3l-title {
     text-align: center;
     top: -100%;
     right: 0;
-    background-color: #eb422a;
+    background-color: #25c3dc;
 	 -o-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -782,7 +796,7 @@ h3.w3l-title {
 	color:#fff;
 }
 .team{
-	background:#26d797;
+	background:#25c3dc;
 }
 /*-- //team --*/
 /*-- menu-section --*/
@@ -800,7 +814,7 @@ h3.w3l-title {
 	line-height:2em;
 }
 .w3layouts_banner_bottom_left h4 span {
-    color:#eb422a;
+    color:#25c3dc;
     font-size: 2em;
 }
 .w3layouts_banner_bottom_left img{
@@ -905,7 +919,7 @@ h3.w3l-title {
 }
 .w3_agileits_testimonials_grid h4 {
     margin-bottom: 1em;
-    color: #26d797;
+    color: black;
     font-size: 1.2em;
     letter-spacing: 1px;
 }
@@ -1078,6 +1092,10 @@ img.posi-w3l {
     -o-background-size: cover;
     -ms-background-size: cover;
 }
+
+.white{
+	color:white !important;
+}
 .logo-2 h2 a span {
     display: block;
     font-size: .25em;
@@ -1156,7 +1174,7 @@ img.posi-w3l {
     text-transform: uppercase;
 }
 .contact-block-left input[type="submit"]:hover{
-    background:#eb422a;
+    background:#25c3dc;
 	color:#fff;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -1188,7 +1206,7 @@ img.posi-w3l {
 	text-decoration:none;
 }
 .copyright p a:hover{
-	color:#eb422a;
+	color:#25c3dc;
 }
 /*-- //copyright --*/
 /*-- bottom-to-top --*/

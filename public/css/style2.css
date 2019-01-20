@@ -1,9 +1,15 @@
 /*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
+Profile view
 --*/
+.box{
+	height: 80px !important;
+	width:100% !important;
+}
+
+.line{
+	text-decoration: underline !important;
+	text-decoration-color: black !important;
+}
 /* reset */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
 article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
@@ -38,6 +44,11 @@ html, body{
     -ms-background-size: cover;
     background-attachment: fixed;
 }
+
+.black{
+	color:black !important;
+}
+
 h1,h2,h3,h4,h5,h6,input,p,a,select,button,textarea{
 	font-family: 'Arsenal', sans-serif;
 	margin:0;
@@ -103,7 +114,7 @@ input[type="submit"],.agileits_copyright p a,a{
 }
 .w3_main_grid_left_grid{
 	padding:2em;
-	background:rgba(57, 255, 0, 0.57);
+	background:#25c3dc;
 }
 .w3ls_main_grid_right_grid,.w3_main_grid_left_grid{
 	min-height: 539px;
@@ -125,7 +136,7 @@ input[type="submit"],.agileits_copyright p a,a{
 }
 .w3l_figure img{
 	margin: 0 auto;
-    border: 3px solid #f32d2d;
+    border: 3px solid black;
     border-radius: 60px;
 }
 .w3ls_main_grid_right_grid{
@@ -155,7 +166,7 @@ input[type="submit"],.agileits_copyright p a,a{
     font-weight: 700;
 }
 .wthree_tab_grid_sub_left p {
-    color: #f32d2d;
+    color: #25c3dc;
     font-size: 13px;
     text-transform: uppercase;
     margin: .5em 0 0;
@@ -228,10 +239,10 @@ input[type="submit"],.agileits_copyright p a,a{
 	background: #1da1f2;
 }
 .agileinfo_google{
-	color: #dd4b39;
+	color: black;
 }
 .agileinfo_google:hover{
-	background: #dd4b39;
+	background: #39a9dd;
 }
 ul.agileinfo_social_icons {
     text-align: center;
@@ -248,7 +259,7 @@ ul.agileinfo_social_icons {
 .wthree_main_grid_right_grid h3:after{
 	content: '';
     width: 20%;
-    background:#f32d2d;
+    background:#25c3dc;
     height: 2px;
     position: absolute;
     left: 40%;
@@ -308,7 +319,7 @@ ul.agileinfo_social_icons {
     cursor: pointer;
 }
 .agile_submit input[type="submit"]:hover{
-	background:#f32d2d;
+	background:#25c3dc;
 }
 .wthree_tab_grid_list li {
     display: block;
@@ -317,7 +328,7 @@ ul.agileinfo_social_icons {
     font-weight: 600;
 }
 .wthree_tab_grid_list li i {
-    color: #f32d2d;
+    color: #25c3dc;
     width: 45px;
     height: 45px;
     border: 1px solid #999;

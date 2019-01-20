@@ -12,8 +12,8 @@
                 tabidentify: '',
                 activetab_bg: 'none',
                 inactive_bg: 'none',
-                active_border_color: '#f32d2d',
-                active_content_border_color: '#f32d2d',
+                active_border_color: '#25c3dc',
+                active_content_border_color: '#25c3dc',
                 activate: function () {
                 }
             }

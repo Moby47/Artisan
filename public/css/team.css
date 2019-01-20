@@ -64,7 +64,7 @@
 	-ms-transform: rotateY(-180deg);
 	-o-transform: rotateY(-180deg);
 	-moz-transform: rotateY(-180deg);
-    background: #F44336;
+    background: #e8e8e8;
     padding: 8em 2em 0;
     text-align: center;
 }
@@ -277,13 +277,15 @@
 }
 @media(max-width:375px){
 	.flip-container, .back {
-		height: 449px;
+		height: 215px;
 	}
 }
 @media(max-width:320px){
 	.flip-container, .back {
-		height: 366px;
+		height: 180px;
 	}
+
+
 	.back {
 		padding: 9em 0em 0;
 	}

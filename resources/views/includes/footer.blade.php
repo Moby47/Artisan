@@ -1,0 +1,1 @@
+<p>© 2019 Artisan . All Rights Reserved  </p>

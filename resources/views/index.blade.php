@@ -2,21 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>DutyPost</title>
+<title>Artisan - Home page</title>
 <!-- Meta tag Keywords -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Glorious Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="keywords" content="Find Services, jobs around you with a simple intuative search pattern to redefine the 
+										way you get connected." />
 
-<!--// Meta tag Keywords -->
-<!-- css files -->
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" /> <!-- Bootstrap-Core-CSS -->
-<link href="css/style33.css" rel="stylesheet" type="text/css" media="all" /> <!-- Style-CSS --> 
-<link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" /> <!-- Flexslider-CSS -->
-<link rel="stylesheet" href="css/team.css" type="text/css" media="screen" property="" /> <!-- Team-CSS -->
-<link rel="stylesheet" href="css/smoothbox.css" type='text/css' media="all" /> <!-- Smoothbox-CSS -->
-<!-- //css files -->
+@include('includes.css')
 
 </head>
 <body>
@@ -25,59 +18,21 @@
 	<div class="center-container">
 		<div class="banner wthree">
 			<div class="container">
-				<div class="banner_top">
-					<div class="col-md-6 col-sm-4 col-xs-4 logo">
-						<h1><a href="index.html">DutyPost<span>logo</span></a></h1>
-					</div>
-					<div class="col-md-6 col-sm-10 col-xs-10 w3_menu">
-						
-							<div class="col-md-6 col-sm-5 col-xs-5 top-nav-text">
-									<a class="page-scroll" href="signin.html"  data-hover="LOGIN">LOGIN</a>
-								</div>
-								<div class="col-md-3 col-sm-4 col-xs-4 top-nav-text">
-									<a class="page-scroll" href="signup.html"  data-hover="LOGIN">REGISTER</a>
-								</div>
-						
-						<div class="mobile-nav-button">
-							<div class="mobile-nav-button__line"></div>
-							<div class="mobile-nav-button__line"></div>
-							<div class="mobile-nav-button__line"></div>
-						</div>
-						<nav class="mobile-menu">
-							<ul>
-								<li class="active"><a href="index.html">Home</a></li>
-								<li><a href="#menu" class="scroll">Help</a></li>
-								<li><a href="#services" class="scroll">Services</a></li>
-								<li><a href="#chefs" class="scroll">Our Users</a></li>
-								<li><a href="#gallery" class="scroll">Gallery</a></li><!--imgs added by users-->
-								<li><a href="#contact" class="scroll">Contact Us</a></li>
-							</ul>
-						</nav>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
+				<!--nav-->
+				@include('includes.nav')
+
 				<!--Slider-->	
 				<div class="col-md-7 callbacks_container">
-				<!--	<br><br>
+				
+				<br><br>
 					<ul class="list-group" id="">
-						<li class="list-group-item">
-								<p>about selection one.</p>
-						</li>
-						<li class="list-group-item">
-								<p>about selection one.</p>
-						</li>
-						<li class="list-group-item">
-								<p>about selection one.</p>
-						</li>
-						<li class="list-group-item">
-								<p>about selection one.</p>
-						</li>
-						<li class="list-group-item">
-								<p>about selection one.</p>
-						</li>
+					<span class='load white'></span><span class='loadtxt white'></span>
+				<span class='content'></span>
+				<span class='co'></span>		
 
+						
 					</ul>
-				-->
+			
 				
 				</div>
 				<!-- //Slider -->
@@ -86,46 +41,93 @@
 				<!-- form -->
 				<div class="col-md-5 callbacks_container form-w3l-agil3">
 					<div class="book-form">
-					<p>Find a person</p>
+					<p>Find a Job</p>
 					   <form action="#" method="post">
 							<div class="form-time-w3layouts">
 									<label><i class="fa fa-search" aria-hidden="true"></i> Search Word :</label>
-									<input type="text" id="" name="" class="form-control" value="" required="">	
-									<button class='btn btn-block'>Find</button>
+									<input type="text" id="word" name="Word" class="form-control" value="" required="" placeholder='Insert a Word'>	
+									<button class='btn btn-block Word'>Find</button>
 							</div>
 
 							<hr>
-
+<form>
 					<div class="form-left-agileits-w3layouts ">
 							<label><i class="fa fa-users" aria-hidden="true"></i>Service Category :</label>
-							<select class="form-control">
-								<option></option>
-								<option value='1'>1 Person</option>
-								<option value='2'>2 People</option>
+							<select class="form-control Service" name='Service'>
+							<option value='tech'>Tech</option>
+							<option  value='food'>Food & Drinks</option>
+							<option value='fashion'>Fashion</option>
+							<option value='hobbies'>Hobbies</option>
+							<option value='pets'>Pets</option>
+							<option value='photo'>Photography</option>
+							<option value='learning'>Learning</option>
+							<option value='others'>Others</option>
 							</select>
 					</div>
-									
-					<div class="form-left-agileits-w3layouts ">
-							<label><i class="fa fa-map" aria-hidden="true"></i> State :</label>
-							<select class="form-control">
-								<option></option>
-								<option value='1'>1 Person</option>
-								<option value='2'>2 People</option>
-							</select>
-					</div>	
-										<div class="form-time-w3layouts">
+
+				<!--	<div class="form-time-w3layouts">
 												<label><i class="fa fa-map-marker" aria-hidden="true"></i> Area :</label>
 												<input type="text" id="" name="" class="form-control" value="" required="">	
 										</div>
+-->
+					<div class="form-left-agileits-w3layouts ">
+							<label><i class="fa fa-map" aria-hidden="true"></i> State :</label>
+							<select class="form-control State" name='State' >
+							<option value="Abuja FCT">Abuja FCT</option>
+              <option value="Abia">Abia</option>
+              <option value="Adamawa">Adamawa</option>
+              <option value="Akwa Ibom">Akwa Ibom</option>
+              <option value="Anambra">Anambra</option>
+              <option value="Bauchi">Bauchi</option>
+              <option value="Bayelsa">Bayelsa</option>
+              <option value="Benue">Benue</option>
+              <option value="Borno">Borno</option>
+              <option value="Cross River">Cross River</option>
+              <option value="Delta">Delta</option>
+              <option value="Ebonyi">Ebonyi</option>
+              <option value="Edo">Edo</option>
+              <option value="Ekiti">Ekiti</option>
+              <option value="Enugu">Enugu</option>
+              <option value="Gombe">Gombe</option>
+              <option value="Imo">Imo</option>
+              <option value="Jigawa">Jigawa</option>
+              <option value="Kaduna">Kaduna</option>
+              <option value="Kano">Kano</option>
+              <option value="Katsina">Katsina</option>
+              <option value="Kebbi">Kebbi</option>
+              <option value="Kogi">Kogi</option>
+              <option value="Kwara">Kwara</option>
+              <option value="Lagos">Lagos</option>
+              <option value="Nassarawa">Nassarawa</option>
+              <option value="Niger">Niger</option>
+              <option value="Ogun">Ogun</option>
+              <option value="Ondo">Ondo</option>
+              <option value="Osun">Osun</option>
+              <option value="Oyo">Oyo</option>
+              <option value="Plateau">Plateau</option>
+              <option value="Rivers">Rivers</option>
+              <option value="Sokoto">Sokoto</option>
+              <option value="Taraba">Taraba</option>
+              <option value="Yobe">Yobe</option>
+              <option value="Zamfara">Zamfara</option>
+							</select>
+					</div>
+					<div class="form-left-agileits-submit">
+								  <input type="submit" value="Find" class='filter'> 
+							</div>
+
+					{{csrf_field()}}	
+	</form>
+										
 							
-							<div class="form-left-agileits-w3layouts ">
+						<!--	<div class="form-left-agileits-w3layouts ">
 									<label><i class="fa fa-intersex" aria-hidden="true"></i> Gender :</label>
 									<select class="form-control">
 										<option></option>
 										<option value='1'>1 Person</option>
 										<option value='2'>2 People</option>
 									</select>
-							</div>
+							</div>-->
 						<!--	<div class="form-left-agileits-submit">
 								  <input type="submit" value="Book a table">
 							</div>-->
@@ -136,80 +138,7 @@
 				<!-- //form -->
 			</div>
 		</div>
-		<!-- modal 
-		<div class="modal about-modal w3-agileits fade" id="myModal2" tabindex="-1" role="dialog">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-					</div> 
-					<div class="modal-body login-page "><! login-page     
-						<div class="login-top sign-top">
-							<div class="agileits-login">
-							<h5>Login</h5>
-							<form action="#" method="post">
-								<input type="email" class="email" name="Email" placeholder="Email" required=""/>
-								<input type="password" class="password" name="Password" placeholder="Password" required=""/>
-								<div class="wthree-text"> 
-									<ul> 
-										<li>
-											<label class="anim">
-												<input type="checkbox" class="checkbox">
-												<span> Remember me ?</span> 
-											</label> 
-										</li>
-									</ul>
-									<div class="clearfix"> </div>
-								</div>  
-								<div class="w3ls-submit"> 
-									<input type="submit" value="LOGIN">  	
-								</div>	
-							</form>
-
-							</div>  
-						</div>
-					</div>  
-				</div>  //login-page 
-			</div>
-		</div>
-	//modal --> 
-		<!-- modal 
-		<div class="modal about-modal w3-agileits fade" id="myModal3" tabindex="-1" role="dialog">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-						</div> 
-						<div class="modal-body login-page ">< login-page     
-							<div class="login-top sign-top">
-								<div class="agileits-login">
-								<h5>Register</h5>
-								<form action="#" method="post">
-									<input type="email"  name="Email" placeholder="Email" required=""/>
-									<input type="password" name="Password" placeholder="Password" required=""/>
-									<input type="text" name="password" placeholder="Confirm Password" required="">
-									<div class="wthree-text"> 
-										<ul> 
-											<li>
-												<label class="anim">
-													<input type="checkbox" class="checkbox">
-													<span> I accept the terms of use</span> 
-												</label> 
-											</li>
-										</ul>
-										<div class="clearfix"> </div>
-									</div>  
-									<div class="w3ls-submit"> 
-										<input type="submit" value="Register">  	
-									</div>	
-								</form>
-								</div>  
-							</div>
-						</div>  
-					</div> <! //login-page 
-				</div>
-			</div>
-			 //modal --> 
+		
 	</div>
 </div>
 
@@ -224,27 +153,19 @@
 							<li>
 								<div class="w3_event_right_grid">
 									<div class="w3layouts_event_right_para">
-										<p>Nam tempus lobortis sem non ornare. Curabitur dignissim interdum sem, et mollis lorem. 
-											Mauris hendrerit, mi in aliquet egestas, nisi mi vestibulum turpis.</p>
+										<p>Find Services around you with a simple intuative search pattern to redefine the 
+										way you get connected.</p>
 									</div>
 								</div>
 							</li>
 							<li>
 								<div class="w3_event_right_grid">
 									<div class="w3layouts_event_right_para">
-										<p>Nam tempus lobortis sem non ornare. Curabitur dignissim interdum sem, et mollis lorem. 
-											Mauris hendrerit, mi in aliquet egestas, nisi mi vestibulum turpis.</p>
+										<p>Create a profile and get discovered today using our plartform of daily growing users.</p>
 									</div>
 								</div>
 							</li>
-							<li>
-								<div class="w3_event_right_grid">
-									<div class="w3layouts_event_right_para">
-										<p>Nam tempus lobortis sem non ornare. Curabitur dignissim interdum sem, et mollis lorem. 
-											Mauris hendrerit, mi in aliquet egestas, nisi mi vestibulum turpis.</p>
-									</div>
-								</div>
-							</li>
+							
 						</ul>
 					</div>
 				</div>
@@ -259,8 +180,8 @@
 					<li>
 						<div class="w3_event_right_grid">
 							<div class="w3layouts_event_right_para">
-								<p>Nam tempus lobortis sem non ornare. Curabitur dignissim interdum sem, et mollis lorem. 
-									Mauris hendrerit, mi in aliquet egestas, nisi mi vestibulum turpis.</p>
+								<p>Artisan is a plartform commited to the outreach of people / services around you. 
+								Create a profile and stay discoverable on Artisan </p>
 							</div>
 						</div>
 					</li>
@@ -288,8 +209,9 @@
 					</div>
 					<div class="wthree-services-captn">
 						<h4>TECH</h4>
-						<a href='services.html'>
-								<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
+						<a href='/services/tech'>
+								<p>Get services on latest tech news on apps, gadgets, tech trends, 
+									ICT News in Nigeria, Africa, & around the World. </p>
 							</a>
 					</div>
 				</div>
@@ -303,8 +225,9 @@
 					</div>
 					<div class="wthree-services-captn">
 						<h4>FASHION & BEAUTY</h4>
-						<a href='services.html'>
-								<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
+						<a href='/services/fashion'>
+								<p>Fashion is a popular style, especially in clothing, footwear, lifestyle,
+									 accessories, makeup, hairstyle and body.</p>
 							</a>
 					</div>
 				</div>
@@ -318,8 +241,9 @@
 					</div>
 					<div class="wthree-services-captn">
 						<h4>HOBBIES & CRAFTS</h4>
-						<a href='services.html'>
-								<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
+						<a href='/services/hobbies'>
+								<p>hobby is a regular activity that is done for enjoyment, typically during one's 
+									leisure time. Hobbies can include collecting themed items and objects etc</p>
 							</a>
 					</div>
 				</div>
@@ -333,8 +257,8 @@
 					</div>
 					<div class="wthree-services-captn">
 						<h4>PETS</h4>
-	<a href='services.html'>
-	<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
+	<a href='/services/pets'>
+	<p>Services on  pets or companion animal</p>
 </a>
 					</div>
 				</div>
@@ -342,21 +266,9 @@
 			<div class="clearfix"> </div>
 		</div>
 		<div class="wthree-services-grids services-grids1">
-			<div class="col-sm-3 wthree-services">
-				<div class="wthree-services-grid">
-					<div class="wthree-services-info">
-						<i class="fa fa-paint-brush" aria-hidden="true"></i>
-						<h4>ARTS</h4>
-						<div class="w3ls-border"> </div>
-					</div>
-					<div class="wthree-services-captn">
-						<h4>ARTS</h4>
-						<a href='services.html'>
-								<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
-							</a>
-					</div>
-				</div>
-			</div>
+
+		
+
 			<div class="col-sm-3 wthree-services">
 				<div class="wthree-services-grid">
 					<div class="wthree-services-info">
@@ -366,8 +278,9 @@
 					</div>
 					<div class="wthree-services-captn">
 						<h4>FOOD & DRINKS</h4>
-						<a href='services.html'>
-								<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
+						<a href='/services/food'>
+								<p>Get delicious ideas for food and drink from the editors of Esquire
+									and services alike.</p>
 							</a>
 					</div>
 				</div>
@@ -381,8 +294,9 @@
 					</div>
 					<div class="wthree-services-captn">
 						<h4>PHOTOGRAPHY</h4>
-						<a href='services.html'>
-								<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
+						<a href='/services/photo'>
+								<p> the science, art, application and practice of creating
+									 durable images by recording light or other electromagnetic radiation</p>
 							</a>
 					</div>
 				</div>
@@ -396,13 +310,27 @@
 					</div>
 					<div class="wthree-services-captn">
 						<h4>LEARNING</h4>
-						<a href='services.html'>
-								<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
+						<a href='/services/learning'>
+								<p>Education services can be rendered here..</p>
 							</a>
 					</div>
 				</div>
 			</div>
-			
+			<div class="col-sm-3 wthree-services">
+				<div class="wthree-services-grid">
+					<div class="wthree-services-info">
+						<i class="fa fa-paint-brush" aria-hidden="true"></i>
+						<h4>OTHERS</h4>
+						<div class="w3ls-border"> </div>
+					</div>
+					<div class="wthree-services-captn">
+						<h4>OTHERS</h4>
+						<a href='/services/others'>
+								<p>Here are uncategorised services that could be for you</p>
+							</a>
+					</div>
+				</div>
+			</div>
 			<div class="clearfix"> </div>
 		</div>
 	</div>
@@ -412,118 +340,69 @@
 <div class="team" id="chefs">
 	<div class="container">
 		<div class="agile-heading team-heading">
-			<h3 class="w3l-title">Real People, Real Tasks</h3>
+			<h3 class="w3l-title">Users</h3>
 		</div>
 		<div class="agile-team-grids">
-			<div class="col-sm-3 team-grid">
-				<div class="flip-container">
-						<div class="flipper">
-								<div class="front">
-									<img src="images/t1.jpg" alt="" />
-								</div>
-								<div class="back">
-									<h4>Peter Parker</h4>
-									<a href='profile.html'><p>Click to See Profile </p></a>
-									<div class="w3l-social">
-										<ul>
-											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
+
+@if(count($users)>0)
+
+@foreach($users as $user)
+<div class="col-sm-3 team-grid">
+		<div class="flip-container">
+			<div class="flipper">
+					<div class="front">
+					<img src="/images/user.jpg" class='img-responsive size' alt="{{$user->fname}} {{$user->lname}}'s service profile" title='{{$user->fname}} {{$user->lname}}' />
+				</div>
+				<div class="back">
+							<h4  class='black'>{{$user->fname}} {{$user->lname}}</h4>
+							<a href='/profile-info/{{$user->id}}' ><p class='black'>View Profile</p></a>
+					<div class="w3l-social">
 					</div>
-					<div class="col-sm-3 team-grid">
-						<div class="flip-container">
-							<div class="flipper">
-									<div class="front">
-									<img src="images/t1.jpg" alt="" />
-								</div>
-								<div class="back">
-											<h4>Henry Wilson</h4>
-											<a href='profile.html'><p>Click to See Profile</p></a>
-									<div class="w3l-social">
-										<ul>
-											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3 team-grid">
-						<div class="flip-container">
-							<div class="flipper">
-									<div class="front">
-									<img src="images/t1.jpg" alt="" />
-								</div>
-								<div class="back">
-											<h4>Aj Botha</h4>
-											<a href='profile.html'><p>Click to See Profile</p></a>
-									<div class="w3l-social">
-										<ul>
-											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3 team-grid">
-						<div class="flip-container">
-							<div class="flipper">
-									<div class="front">
-											<img src="images/t1.jpg" alt="" />
-								</div>
-								<div class="back">
-										<h4>Dera Johan</h4>
-										<a href='profile.html'><p>Click to See Profile</p></a>
-									<div class="w3l-social">
-										<ul>
-											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	@endforeach
+
+@else
+<div class='text-center alert alert-info'>
+		No User Currently on Artisan <a href='/register'>Click to Register Now</a>
+	</div>
+
+@endif
+					
+
+
 				</div>
 			</div>
 		</div>
 		<!-- //team -->
 
 <!-- testimonials -->
-<div class="testimonials">
+<div class="testimonials" id='testimony'>
 	<div class="container">
 		<h3 class="w3l-title">Testimonials</h3>
 		<div class="w3_testimonials_grids">
+		
+			@if(count($tes)>0)
+
+			@foreach($tes as $t)
 			<div class="col-md-4 col-sm-4 item w3_agileits_testimonials_grid">
-				<div class="text-w3l">
-					<h4>Eva</h4>
-					<p>Donec quis turpis pellentesque justo pulvinar scelerisque placerat mattis enim.</p>
+					<div class="text-w3l white">
+					<h4 class='white'>{{$t->name}}</h4>
+						<p class='white'>{{$t->testimony}}</p>
+						<i class='white'>{{$t->created_at->diffforhumans()}}</i>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-4 col-sm-4 item w3_agileits_testimonials_grid">
-				<div class="text-w3l">
-					<h4>Dera</h4>
-					<p>Donec quis turpis pellentesque justo pulvinar scelerisque placerat mattis enim.</p>
+				@endforeach
+			@else
+			<div class='text-center alert alert-info'>
+					No Testimonies Currently. <a href="#tesModal" data-toggle="modal" class="scroll">Click to Testify</a>
 				</div>
-			</div>
-			<div class="col-md-4 col-sm-4 item w3_agileits_testimonials_grid">
-				
-				<div class="text-w3l">
-					<h4>Hen</h4>
-					<p>Donec quis turpis pellentesque justo pulvinar scelerisque placerat mattis enim.</p>
-				</div>
-			</div>
+			@endif
+
+			
+
 			<div class="clearfix"> </div>
 		</div>
 	</div>
@@ -534,74 +413,27 @@
 	<div class="container">
 		<h3 class="w3l-title">Gallery</h3>
 		<div class="agile_delicious_food_grids">
-			<div class="agile_delicious_food_grid">
-				<a class="sb" href="images/g1.jpg" title="more text on the user's job description on this image">
-					<div class="view view-sixth">
-						<img src="images/g1.jpg" alt=" " class="img-responsive" />
-						<div class="mask">
-								<h4>Game</h4>
-								<p>Dera Pc games universe.</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="agile_delicious_food_grid">
-				<a class="sb" href="images/g2.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate.">
-					<div class="view view-sixth">
-						<img src="images/g2.jpg" alt=" " class="img-responsive" />
-						<div class="mask">
-								<h4>Game</h4>
-								<p>Dera Pc games universe.</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="agile_delicious_food_grid">
-				<a class="sb" href="images/g3.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate.">
-					<div class="view view-sixth">
-						<img src="images/g3.jpg" alt=" " class="img-responsive" />
-						<div class="mask">
-								<h4>Game</h4>
-								<p>Dera Pc games universe.</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="agile_delicious_food_grid">
-				<a class="sb" href="images/g2.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate.">
-					<div class="view view-sixth">
-						<img src="images/g2.jpg" alt=" " class="img-responsive" />
-						<div class="mask">
-								<h4>Game</h4>
-								<p>Dera Pc games universe.</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			
-			<div class="agile_delicious_food_grid">
-				<a class="sb" href="images/g3.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate.">
-					<div class="view view-sixth">
-						<img src="images/g3.jpg" alt=" " class="img-responsive" />
-						<div class="mask">
-							<h4>Game</h4>
-							<p>Dera Pc games universe.</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="agile_delicious_food_grid">
-					<a class="sb" href="images/g2.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate.">
-						<div class="view view-sixth">
-							<img src="images/g2.jpg" alt=" " class="img-responsive" />
-							<div class="mask">
-									<h4>Game</h4>
-									<p>Dera Pc games universe.</p>
-							</div>
-						</div>
-					</a>
-				</div>
 		
+			
+@if(count($gal)>0)
+		@foreach($gal as $g)
+			<div class="agile_delicious_food_grid ">
+			<a class="sb" href="/storage/user_images/{{$g->image}}" title="{{$g->title}}...<a href='/profile-info/{{$g->user_id}}'>[VIEW PROFILE]</a>">
+					<div class="view view-sixth">
+						<img src="/storage/user_images/{{$g->image}}" alt="{{$g->title}} " class="img-responsive size" title='{{$g->title}}'/>
+						<div class="mask">
+								<!--<h4>Game</h4>-->
+								<p>{{$g->title}}</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		@endforeach
+		@else
+		<div class='text-center alert alert-info'>
+			Gallery Is Currently Empty <a href='/dashboard'>Click to Post a Picture</a>
+		</div>
+		@endif		
 			
 			<div class="clearfix"> </div>
 		</div>
@@ -614,188 +446,83 @@
 		<div class="agile-footer-grids">
 			<div class="col-md-3 col-sm-6 col-xs-6 w3-agile-footer-grid">
 				<div class="logo-2">
-					<h2><a href="index.html">Duty<span>Post</span></a></h2>
+					<h2><a href="/">Artisan<span></span></a></h2>
 				</div>
 				<ul>
 					<li>Email</li>
-					<li><a href="mailto:dera@realn!gga.com">dera@realn!gga.com</a></li>
+					<li><a href="mailto:clutchajob@yahoo.com">clutchajob@yahoo.com</a></li>
 					<li>Phone Number</li>
-					<li><a href=''>+2348047474747</a></li>
+					<li><a href='tel:08063848564'>+2348063848564</a></li>
 				</ul>				
 			</div>
 			<div class="col-md-3 col-sm-6 col-xs-6 w3-agile-footer-grid">
 				<h3>Social Links</h3>
 				<div class="col-md-5 col-sm-5 col-xs-5 agile-opening">
 					<ul>
-						<li><a href='' target='_balnk'>Facebook</a></li>
-						<li><a href='' target='_balnk'>Twitter</a> </li>
-						<li><a href='' target='_balnk'>Instagram </a></li>
-						<li><a href='' target='_balnk'>Whatsapp</a> </li>
+						<li><a href='#' target='_balnk'>Facebook</a></li>
+						<li><a href='#' target='_balnk'>Twitter</a> </li>
+						<li><a href='#' target='_balnk'>Instagram </a></li>
 					</ul>
 				</div>
 			
 				<div class="clearfix"> </div>
 			</div>
-			<div class="col-md-6 w3-agile-footer-grid grid-w3-1">
+			<!--<div class="col-md-6 w3-agile-footer-grid grid-w3-1">
 				<div class="contact-block-left">
 					<form action="#" method="post">
-						<input type="text" placeholder="Name" name="Name" required="">
-						<input type="email" class="email" placeholder="Email" name="Email" required="">             
-						<textarea placeholder="Message" name="message" required=""></textarea>
-						<input type="submit" value="Send">
+						{{csrf_field()}}
+						<input type="text" placeholder="Name" name="Name" id='Name' required="">
+						<input type="email" class="email" placeholder="Email" id='Email' name="Email" required="">             
+						<textarea placeholder="Message" name="Message" required="" id='Mess'></textarea>
+						<input type="submit" class='contact' value="Send">
 					</form>
 				</div>
 				<div class="clearfix"> </div>
-			</div>
+			</div>-->
 			<div class="clearfix"> </div>
 		</div>
 	</div>
 	<!-- copyright © 2017 Glorious . All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a> -->
 	<div class="copyright">
-		<p>© 2018 Duty Post . All Rights Reserved  </p>
+		@include('includes.footer')
 	</div>
 	<!-- //copyright -->
 </div>
 <!-- //footer -->
+<!-- modal -->
+<div class="modal about-modal w3-agileits fade" id="tesModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+				</div> 
+				<div class="modal-body login-page "><!-- testimonial -->     
+					<div class="login-top sign-top">
+						<div class="agileits-login">
 
+								<form action="#" method="post" id='tt'>
+									{{csrf_field()}}
+									<input type="text" class="email" name="Name" id='TName' placeholder="First Name" required=""/>
+									<textarea class="password" name="Testimony" id='Testimony' placeholder="Testimony" required=""></textarea>
+
+									<div class="w3ls-submit"> 
+									<input type="submit" value="TESTIFY" class='tes'> 
+									</div>	
+								</form>
+
+							<div class="w3ls-submit"> 
+									<a href="#testimony" data-dismiss="modal" class='btn btn-info scroll'>VIEW TESTIMONIES</a>
+								</div>	
+								
+						</div>  
+					</div>
+				</div>  
+			</div> <!-- //testimonial -->
+		</div>
+	</div>
+	<!-- //modal --> 
 <!-- js-scripts -->		
-		
-	<!-- js -->
-	<script src="js/jquery.min.js"> </script>
-	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
-	<!-- //js -->
-	<!-- responsiveslider -->
-	<script src="js/responsiveslides.min.js"></script>
-		<script>
-			// You can also use "$(window).load(function() {"
-			$(function () {
-			  // Slideshow 4
-			  $("#slider3").responsiveSlides({
-				auto: true,
-				pager:true,
-				nav:false,
-				speed: 500,
-				namespace: "callbacks",
-				before: function () {
-				  $('.events').append("<li>before event fired.</li>");
-				},
-				after: function () {
-				  $('.events').append("<li>after event fired.</li>");
-				}
-			  });
-		
-			});
-		 </script>
-	<!-- //responsiveslider -->
-	<!-- menu -->
-	<script>
-		$(document).ready(function () {
-		  $('.mobile-nav-button').on('click', function() {
-		  $( ".mobile-nav-button .mobile-nav-button__line:nth-of-type(1)" ).toggleClass( "mobile-nav-button__line--1");
-		  $( ".mobile-nav-button .mobile-nav-button__line:nth-of-type(2)" ).toggleClass( "mobile-nav-button__line--2");  
-		  $( ".mobile-nav-button .mobile-nav-button__line:nth-of-type(3)" ).toggleClass( "mobile-nav-button__line--3");  
-		  
-		  $('.mobile-menu').toggleClass('mobile-menu--open');
-		  return false;
-		}); 
-		});
-	</script>
-	<!-- //menu -->
-	<!-- flexSlider-for-grids-section -->
-		<script defer src="js/jquery.flexslider.js"></script>
-		<script type="text/javascript">
-			$(window).load(function(){
-			  $('.flexslider').flexslider({
-				animation: "slide",
-				start: function(slider){
-				  $('body').removeClass('loading');
-				}
-			  });
-			});
-	  </script>
-	<!-- //flexSlider-for-grids-section -->
-	<!-- flexSlider-for-menu-section -->
-	<script type="text/javascript">
-		$(window).load(function() {
-			$("#flexiselDemo1").flexisel({
-				visibleItems: 4,
-				animationSpeed: 1000,
-				autoPlay: true,
-				autoPlaySpeed: 3000,    		
-				pauseOnHover: true,
-				enableResponsiveBreakpoints: true,
-				responsiveBreakpoints: { 
-					portrait: { 
-						changePoint:480,
-						visibleItems: 2
-					}, 
-					landscape: { 
-						changePoint:640,
-						visibleItems:3
-					},
-					tablet: { 
-						changePoint:768,
-						visibleItems: 4
-					}
-				}
-			});
-			
-		});
-	</script>
-	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
-	<!-- //flexSlider-for-menu-section -->
-	<!-- start-smoth-scrolling -->
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-			});
-		});
-	</script>
-	<!-- start-smoth-scrolling -->
-	<!-- for-bottom-to-top smooth scrolling -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-		/*
-			var defaults = {
-			containerID: 'toTop', // fading element id
-			containerHoverID: 'toTopHover', // fading element hover id
-			scrollSpeed: 1200,
-			easingType: 'linear' 
-			};
-		*/								
-		$().UItoTop({ easingType: 'easeOutQuart' });
-		});
-	</script>
-	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-	<!-- //for-bottom-to-top smooth scrolling -->
-	<!-- Calendar 
-	<link rel="stylesheet" href="css/jquery-ui.css" />
-	<script src="js/jquery-ui.js"></script>
-		<script>
-			$(function() {
-			$( "#datepicker,#datepicker1,#datepicker2,#datepicker3" ).datepicker();
-			});
-		</script>
-	 //Calendar -->
-	<!-- video-js
-	<script src="js/jquery.vide.min.js"></script>
-	 //video-js  -->	
-	<!-- smoothbox -->
-	<script type="text/javascript" src="js/smoothbox.jquery2.js"></script>
-	<!-- //smoothbox -->
-	<!-- Time 
-	<script type="text/javascript" src="js/wickedpicker.js"></script>
-		<script type="text/javascript">
-			$('.timepicker').wickedpicker({twentyFour: false});
-		</script>
-	 //Time -->
-
+	@include('includes.js')
 <!-- //js-scripts -->
 </body>
 </html>

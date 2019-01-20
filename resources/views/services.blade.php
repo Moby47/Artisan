@@ -1,22 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>DutyPost - Services</title>
+<title>Artisan - Services</title>
 <!-- Meta tag Keywords -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="Find Services, jobs around you with a simple intuative search pattern to redefine the 
+										way you get connected." />
 
-<!--// Meta tag Keywords -->
-<!-- css files -->
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" /> <!-- Bootstrap-Core-CSS -->
-<link href="css/style33.css" rel="stylesheet" type="text/css" media="all" /> <!-- Style-CSS --> 
-<link href="css/font-awesome.css" rel="stylesheet"> <!-- Font-Awesome-Icons-CSS -->
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" /> <!-- Flexslider-CSS -->
-<link rel="stylesheet" href="css/team.css" type="text/css" media="screen" property="" /> <!-- Team-CSS -->
-<link rel="stylesheet" href="css/smoothbox.css" type='text/css' media="all" /> <!-- Smoothbox-CSS -->
-<!-- //css files -->
+@include('includes.css')
+
 
 </head>
 <body>
@@ -25,54 +18,17 @@
 	<div class="center-container">
 		<div class="banner wthree">
 			<div class="container">
-				<div class="banner_top">
-					<div class="col-md-6 col-sm-4 col-xs-4 logo">
-						<h1><a href="index.html">DutyPost<span>logo</span></a></h1>
-					</div>
-					<div class="col-md-6 col-sm-10 col-xs-10 w3_menu">
-						
-							<div class="col-md-6 col-sm-5 col-xs-5 top-nav-text">
-									<a class="page-scroll" href="#myModal2" data-toggle="modal" data-hover="LOGIN">LOGIN</a>
-								</div>
-								<div class="col-md-3 col-sm-4 col-xs-4 top-nav-text">
-									<a class="page-scroll" href="#myModal3" data-toggle="modal" data-hover="LOGIN">REGISTER</a>
-								</div>
-						
-						<div class="mobile-nav-button">
-							<div class="mobile-nav-button__line"></div>
-							<div class="mobile-nav-button__line"></div>
-							<div class="mobile-nav-button__line"></div>
-						</div>
-						<nav class="mobile-menu">
-							<ul>
-								<li class="active"><a href="index.html">Home</a></li>
-								<li><a href="#services" class="scroll">Services</a></li>
-								<li><a href="#gallery" class="scroll">Gallery</a></li><!--imgs added by users-->
-								<li><a href="#contact" class="scroll">Contact Us</a></li>
-							</ul>
-						</nav>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
+
+				<!--nav-->
+				@include('includes.nav')
+
 				<!--Slider-->	
 				<div class="col-md-7 callbacks_container">
 					<br><br>
 					<ul class="list-group" id="">
-						<li class="list-group-item">
-								<p>Result on this category, links to profile.</p>
-						</li>
-						<li class="list-group-item">
-								<p>Result on this category, links to profile.</p>
-						</li>
-						<li class="list-group-item">
-								<p>Result on this category, links to profile.</p>
-						</li>
-						<li class="list-group-item">
-								<p>Result on this category, links to profile.</p>
-						</li>
-						<li class="list-group-item">
-								<p>Result on this category, links to profile.</p>
-						</li>
+					<span class='load white'></span><span class='loadtxt white'></span>
+				<span class='content'></span>
+				<span class='co'></span>		
 
 					</ul>
 				
@@ -85,32 +41,64 @@
 				<div class="col-md-5 callbacks_container form-w3l-agil3">
 					<div class="book-form">
 					<p>Filter Category</p>
-					   <form action="#" method="post">
+					   <form action="{{route('filter')}}" method="get">
 						
 							<div class="form-left-agileits-w3layouts ">
-									<label><i class="fa fa-map" aria-hidden="true"></i> State :</label>
-									<select class="form-control">
-										<option></option>
-										<option value='1'>1 Person</option>
-										<option value='2'>2 People</option>
+									<label><i class="fa fa-map" aria-hidden="true"></i>Select State :</label>
+
+									<select class="form-control" name='State' id='state'>
+									<option value="Abuja FCT">Abuja FCT</option>
+              <option value="Abia">Abia</option>
+              <option value="Adamawa">Adamawa</option>
+              <option value="Akwa Ibom">Akwa Ibom</option>
+              <option value="Anambra">Anambra</option>
+              <option value="Bauchi">Bauchi</option>
+              <option value="Bayelsa">Bayelsa</option>
+              <option value="Benue">Benue</option>
+              <option value="Borno">Borno</option>
+              <option value="Cross River">Cross River</option>
+              <option value="Delta">Delta</option>
+              <option value="Ebonyi">Ebonyi</option>
+              <option value="Edo">Edo</option>
+              <option value="Ekiti">Ekiti</option>
+              <option value="Enugu">Enugu</option>
+              <option value="Gombe">Gombe</option>
+              <option value="Imo">Imo</option>
+              <option value="Jigawa">Jigawa</option>
+              <option value="Kaduna">Kaduna</option>
+              <option value="Kano">Kano</option>
+              <option value="Katsina">Katsina</option>
+              <option value="Kebbi">Kebbi</option>
+              <option value="Kogi">Kogi</option>
+              <option value="Kwara">Kwara</option>
+              <option value="Lagos">Lagos</option>
+              <option value="Nassarawa">Nassarawa</option>
+              <option value="Niger">Niger</option>
+              <option value="Ogun">Ogun</option>
+              <option value="Ondo">Ondo</option>
+              <option value="Osun">Osun</option>
+              <option value="Oyo">Oyo</option>
+              <option value="Plateau">Plateau</option>
+              <option value="Rivers">Rivers</option>
+              <option value="Sokoto">Sokoto</option>
+              <option value="Taraba">Taraba</option>
+              <option value="Yobe">Yobe</option>
+              <option value="Zamfara">Zamfara</option>
 									</select>
 							</div>
+
 										<div class="form-time-w3layouts">
-												<label><i class="fa fa-map-marker" aria-hidden="true"></i> Area :</label>
-												<input type="text" id="" name="" class="form-control" value="" required="">	
-										</div>
-							
-							<div class="form-left-agileits-w3layouts ">
-									<label><i class="fa fa-intersex" aria-hidden="true"></i> Gender :</label>
-									<select class="form-control">
-										<option></option>
-										<option value='1'>1 Person</option>
-										<option value='2'>2 People</option>
-									</select>
+										<label><i class="fa fa-map-marker" aria-hidden="true"></i> Town :</label>
+												<input type='text' name='Location' value='' class='local' placeholder='eg Ikeja'/>
+												</div>
+
+
+												<input type='hidden' name='service'  class='service' value='{{$service}}'/>
+														{{csrf_field()}}
+						<div class="form-left-agileits-submit">
+								  <input type="submit" value="Find" class=''> 
 							</div>
-						<!--	<div class="form-left-agileits-submit">
-								  <input type="submit" value="Book a table">
-							</div>-->
+
 						</form>
 					</div>
 				</div>
@@ -118,80 +106,7 @@
 				<!-- //form -->
 			</div>
 		</div>
-		<!-- modal -->
-		<div class="modal about-modal w3-agileits fade" id="myModal2" tabindex="-1" role="dialog">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-					</div> 
-					<div class="modal-body login-page "><!-- login-page -->     
-						<div class="login-top sign-top">
-							<div class="agileits-login">
-							<h5>Login</h5>
-							<form action="#" method="post">
-								<input type="email" class="email" name="Email" placeholder="Email" required=""/>
-								<input type="password" class="password" name="Password" placeholder="Password" required=""/>
-								<div class="wthree-text"> 
-									<ul> 
-										<li>
-											<label class="anim">
-												<input type="checkbox" class="checkbox">
-												<span> Remember me ?</span> 
-											</label> 
-										</li>
-									</ul>
-									<div class="clearfix"> </div>
-								</div>  
-								<div class="w3ls-submit"> 
-									<input type="submit" value="LOGIN">  	
-								</div>	
-							</form>
-
-							</div>  
-						</div>
-					</div>  
-				</div> <!-- //login-page -->
-			</div>
-		</div>
-		<!-- //modal --> 
-		<!-- modal -->
-		<div class="modal about-modal w3-agileits fade" id="myModal3" tabindex="-1" role="dialog">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-						</div> 
-						<div class="modal-body login-page "><!-- login-page -->     
-							<div class="login-top sign-top">
-								<div class="agileits-login">
-								<h5>Register</h5>
-								<form action="#" method="post">
-									<input type="email"  name="Email" placeholder="Email" required=""/>
-									<input type="password" name="Password" placeholder="Password" required=""/>
-									<input type="text" name="password" placeholder="Confirm Password" required="">
-									<div class="wthree-text"> 
-										<ul> 
-											<li>
-												<label class="anim">
-													<input type="checkbox" class="checkbox">
-													<span> I accept the terms of use</span> 
-												</label> 
-											</li>
-										</ul>
-										<div class="clearfix"> </div>
-									</div>  
-									<div class="w3ls-submit"> 
-										<input type="submit" value="Register">  	
-									</div>	
-								</form>
-								</div>  
-							</div>
-						</div>  
-					</div> <!-- //login-page -->
-				</div>
-			</div>
-			<!-- //modal --> 
+	
 	</div>
 </div>
 
@@ -201,213 +116,172 @@
 <div class="services" id="services">
 		<div class="container">
 			<div class="agile-heading">
-				<h3 class="w3l-title">Services</h3>
+			<h3 class="w3l-title">Services</h3>
+		</div>
+		<div class="wthree-services-grids">
+			<div class="col-sm-3 wthree-services">
+				<div class="wthree-services-grid">
+					<div class="wthree-services-info">
+						<i class="fa fa-laptop" aria-hidden="true"></i>
+						<h4>TECH</h4>
+						<div class="w3ls-border"> </div>
+					</div>
+					<div class="wthree-services-captn">
+						<h4>TECH</h4>
+						<a href='/services/tech'>
+								<p>Get services on latest tech news on apps, gadgets, tech trends, 
+									ICT News in Nigeria, Africa, & around the World. </p>
+							</a>
+					</div>
+				</div>
+				</div>
+			<div class="col-sm-3 wthree-services">
+				<div class="wthree-services-grid">
+					<div class="wthree-services-info">
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<h4>FASHION & BEAUTY</h4>
+						<div class="w3ls-border"> </div>
+					</div>
+					<div class="wthree-services-captn">
+						<h4>FASHION & BEAUTY</h4>
+						<a href='/services/fashion'>
+								<p>Fashion is a popular style, especially in clothing, footwear, lifestyle,
+									 accessories, makeup, hairstyle and body.</p>
+							</a>
+					</div>
+				</div>
 			</div>
-			<div class="wthree-services-grids">
-				<div class="col-sm-3 wthree-services">
-					<div class="wthree-services-grid">
-						<div class="wthree-services-info">
-							<i class="fa fa-laptop" aria-hidden="true"></i>
-							<h4>TECH</h4>
-							<div class="w3ls-border"> </div>
-						</div>
-						<div class="wthree-services-captn">
-							<h4>TECH</h4>
-							<a href='services.html'>
-									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
-								</a>
-						</div>
+			<div class="col-sm-3 wthree-services">
+				<div class="wthree-services-grid">
+					<div class="wthree-services-info">
+						<i class="fa fa-bicycle" aria-hidden="true"></i>
+						<h4>HOBBIES & CRAFTS</h4>
+						<div class="w3ls-border"> </div>
 					</div>
-					</div>
-				<div class="col-sm-3 wthree-services">
-					<div class="wthree-services-grid">
-						<div class="wthree-services-info">
-							<i class="fa fa-star" aria-hidden="true"></i>
-							<h4>FASHION & BEAUTY</h4>
-							<div class="w3ls-border"> </div>
-						</div>
-						<div class="wthree-services-captn">
-							<h4>FASHION & BEAUTY</h4>
-							<a href='services.html'>
-									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
-								</a>
-						</div>
+					<div class="wthree-services-captn">
+						<h4>HOBBIES & CRAFTS</h4>
+						<a href='/services/hobbies'>
+								<p>hobby is a regular activity that is done for enjoyment, typically during one's 
+									leisure time. Hobbies can include collecting themed items and objects etc</p>
+							</a>
 					</div>
 				</div>
-				<div class="col-sm-3 wthree-services">
-					<div class="wthree-services-grid">
-						<div class="wthree-services-info">
-							<i class="fa fa-bicycle" aria-hidden="true"></i>
-							<h4>HOBBIES & CRAFTS</h4>
-							<div class="w3ls-border"> </div>
-						</div>
-						<div class="wthree-services-captn">
-							<h4>HOBBIES & CRAFTS</h4>
-							<a href='services.html'>
-									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
-								</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3 wthree-services">
-					<div class="wthree-services-grid">
-						<div class="wthree-services-info">
-							<i class="fa fa-paw" aria-hidden="true"></i>
-								<h4>PETS</h4>
-							<div class="w3ls-border"> </div>
-						</div>
-						<div class="wthree-services-captn">
+			</div>
+			<div class="col-sm-3 wthree-services">
+				<div class="wthree-services-grid">
+					<div class="wthree-services-info">
+						<i class="fa fa-paw" aria-hidden="true"></i>
 							<h4>PETS</h4>
-		<a href='services.html'>
-		<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
-	</a>
-						</div>
+						<div class="w3ls-border"> </div>
+					</div>
+					<div class="wthree-services-captn">
+						<h4>PETS</h4>
+	<a href='/services/pets'>
+	<p>Services on  pets or companion animal</p>
+</a>
 					</div>
 				</div>
-				<div class="clearfix"> </div>
 			</div>
-			<div class="wthree-services-grids services-grids1">
-				<div class="col-sm-3 wthree-services">
-					<div class="wthree-services-grid">
-						<div class="wthree-services-info">
-							<i class="fa fa-paint-brush" aria-hidden="true"></i>
-							<h4>ARTS</h4>
-							<div class="w3ls-border"> </div>
-						</div>
-						<div class="wthree-services-captn">
-							<h4>ARTS</h4>
-							<a href='services.html'>
-									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
-								</a>
-						</div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="wthree-services-grids services-grids1">
+
+		
+
+			<div class="col-sm-3 wthree-services">
+				<div class="wthree-services-grid">
+					<div class="wthree-services-info">
+						<i class="fa fa-cutlery" aria-hidden="true"></i>
+						<h4>FOOD & DRINKS</h4>
+						<div class="w3ls-border"> </div>
+					</div>
+					<div class="wthree-services-captn">
+						<h4>FOOD & DRINKS</h4>
+						<a href='/services/food'>
+								<p>Get delicious ideas for food and drink from the editors of Esquire
+									and services alike.</p>
+							</a>
 					</div>
 				</div>
-				<div class="col-sm-3 wthree-services">
-					<div class="wthree-services-grid">
-						<div class="wthree-services-info">
-							<i class="fa fa-cutlery" aria-hidden="true"></i>
-							<h4>FOOD & DRINKS</h4>
-							<div class="w3ls-border"> </div>
-						</div>
-						<div class="wthree-services-captn">
-							<h4>FOOD & DRINKS</h4>
-							<a href='services.html'>
-									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
-								</a>
-						</div>
+			</div>
+			<div class="col-sm-3 wthree-services">
+				<div class="wthree-services-grid">
+					<div class="wthree-services-info">
+						<i class="fa fa-image" aria-hidden="true"></i>
+						<h4>PHOTOGRAPHY</h4>
+						<div class="w3ls-border"> </div>
+					</div>
+					<div class="wthree-services-captn">
+						<h4>PHOTOGRAPHY</h4>
+						<a href='/services/photo'>
+								<p> the science, art, application and practice of creating
+									 durable images by recording light or other electromagnetic radiation</p>
+							</a>
 					</div>
 				</div>
-				<div class="col-sm-3 wthree-services">
-					<div class="wthree-services-grid">
-						<div class="wthree-services-info">
-							<i class="fa fa-image" aria-hidden="true"></i>
-							<h4>PHOTOGRAPHY</h4>
-							<div class="w3ls-border"> </div>
-						</div>
-						<div class="wthree-services-captn">
-							<h4>PHOTOGRAPHY</h4>
-							<a href='services.html'>
-									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
-								</a>
-						</div>
+			</div>
+			<div class="col-sm-3 wthree-services">
+				<div class="wthree-services-grid">
+					<div class="wthree-services-info">
+						<i class="fa fa-book" aria-hidden="true"></i>
+						<h4>LEARNING</h4>
+						<div class="w3ls-border"> </div>
+					</div>
+					<div class="wthree-services-captn">
+						<h4>LEARNING</h4>
+						<a href='/services/learning'>
+								<p>Education services can be rendered here..</p>
+							</a>
 					</div>
 				</div>
-				<div class="col-sm-3 wthree-services">
-					<div class="wthree-services-grid">
-						<div class="wthree-services-info">
-							<i class="fa fa-book" aria-hidden="true"></i>
-							<h4>LEARNING</h4>
-							<div class="w3ls-border"> </div>
-						</div>
-						<div class="wthree-services-captn">
-							<h4>LEARNING</h4>
-							<a href='services.html'>
-									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt. Click Here</p>
-								</a>
-						</div>
+			</div>
+			<div class="col-sm-3 wthree-services">
+				<div class="wthree-services-grid">
+					<div class="wthree-services-info">
+						<i class="fa fa-paint-brush" aria-hidden="true"></i>
+						<h4>OTHERS</h4>
+						<div class="w3ls-border"> </div>
+					</div>
+					<div class="wthree-services-captn">
+						<h4>OTHERS</h4>
+						<a href='/services/others'>
+								<p>Here are uncategorised services that could be for you</p>
+							</a>
 					</div>
 				</div>
-				
-				<div class="clearfix"> </div>
+			</div>
+			<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
 	<!-- //services -->
-
 
 <!-- delicious-food -->
 <div class="delicious_food" id="gallery">
 	<div class="container">
 		<h3 class="w3l-title">Gallery</h3>
 		<div class="agile_delicious_food_grids">
-			<div class="agile_delicious_food_grid">
-				<a class="sb" href="images/g1.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate.">
-					<div class="view view-sixth">
-						<img src="images/g1.jpg" alt=" " class="img-responsive" />
-						<div class="mask">
-								<h4>Game</h4>
-								<p>Dera Pc games universe.</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="agile_delicious_food_grid">
-				<a class="sb" href="images/g2.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate.">
-					<div class="view view-sixth">
-						<img src="images/g2.jpg" alt=" " class="img-responsive" />
-						<div class="mask">
-								<h4>Game</h4>
-								<p>Dera Pc games universe.</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="agile_delicious_food_grid">
-				<a class="sb" href="images/g3.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate.">
-					<div class="view view-sixth">
-						<img src="images/g3.jpg" alt=" " class="img-responsive" />
-						<div class="mask">
-								<h4>Game</h4>
-								<p>Dera Pc games universe.</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="agile_delicious_food_grid">
-				<a class="sb" href="images/g2.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate.">
-					<div class="view view-sixth">
-						<img src="images/g2.jpg" alt=" " class="img-responsive" />
-						<div class="mask">
-								<h4>Game</h4>
-								<p>Dera Pc games universe.</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			
-			<div class="agile_delicious_food_grid">
-				<a class="sb" href="images/g3.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate.">
-					<div class="view view-sixth">
-						<img src="images/g3.jpg" alt=" " class="img-responsive" />
-						<div class="mask">
-							<h4>Game</h4>
-							<p>Dera Pc games universe.</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="agile_delicious_food_grid">
-					<a class="sb" href="images/g2.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate.">
-						<div class="view view-sixth">
-							<img src="images/g2.jpg" alt=" " class="img-responsive" />
-							<div class="mask">
-									<h4>Game</h4>
-									<p>Dera Pc games universe.</p>
-							</div>
-						</div>
-					</a>
-				</div>
 		
+			
+@if(count($gal)>0)
+		@foreach($gal as $g)
+			<div class="agile_delicious_food_grid ">
+			<a class="sb" href="/storage/user_images/{{$g->image}}" title="{{$g->title}}...<a href='/profile-info/{{$g->user_id}}'>[VIEW PROFILE]</a>">
+					<div class="view view-sixth">
+						<img src="/storage/user_images/{{$g->image}}" alt="{{$g->title}} " class="img-responsive size" title='{{$g->title}}'/>
+						<div class="mask">
+								<!--<h4>Game</h4>-->
+								<p>{{$g->title}}</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		@endforeach
+		@else
+		<div class='text-center alert alert-info'>
+			Gallery Is Currently Empty <a href='/dashboard'>Click to Post a Picture</a>
+		</div>
+		@endif		
 			
 			<div class="clearfix"> </div>
 		</div>
@@ -424,25 +298,24 @@
 				</div>
 				<ul>
 					<li>Email</li>
-					<li><a href="mailto:dera@realn!gga.com">dera@realn!gga.com</a></li>
+					<li><a href="mailto:clutchajob@yahoo.com">clutchajob@yahoo.com</a></li>
 					<li>Phone Number</li>
-					<li><a href=''>+2348047474747</a></li>
+					<li><a href='tel:08063848564'>+2348063848564</a></li>
 				</ul>				
 			</div>
 			<div class="col-md-3 col-sm-6 col-xs-6 w3-agile-footer-grid">
 				<h3>Social Links</h3>
 				<div class="col-md-5 col-sm-5 col-xs-5 agile-opening">
 					<ul>
-						<li><a href='' target='_balnk'>Facebook</a></li>
-						<li><a href='' target='_balnk'>Twitter</a> </li>
-						<li><a href='' target='_balnk'>Instagram </a></li>
-						<li><a href='' target='_balnk'>Whatsapp</a> </li>
+						<li><a href='#' target='_balnk'>Facebook</a></li>
+						<li><a href='#' target='_balnk'>Twitter</a> </li>
+						<li><a href='#' target='_balnk'>Instagram </a></li>
 					</ul>
 				</div>
 			
 				<div class="clearfix"> </div>
 			</div>
-			<div class="col-md-6 w3-agile-footer-grid grid-w3-1">
+			<!--<div class="col-md-6 w3-agile-footer-grid grid-w3-1">
 				<div class="contact-block-left">
 					<form action="#" method="post">
 						<input type="text" placeholder="Name" name="Name" required="">
@@ -452,13 +325,13 @@
 					</form>
 				</div>
 				<div class="clearfix"> </div>
-			</div>
+			</div>-->
 			<div class="clearfix"> </div>
 		</div>
 	</div>
 	<!-- copyright © 2017 Glorious . All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a> -->
 	<div class="copyright">
-		<p>© 2018 Duty Post . All Rights Reserved  </p>
+	@include('includes.footer')
 	</div>
 	<!-- //copyright -->
 </div>
@@ -466,141 +339,7 @@
 
 <!-- js-scripts -->		
 		
-	<!-- js -->
-	<script src="js/jquery.min.js"> </script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
-	<!-- //js -->
-	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
-	<!-- responsiveslider -->
-	<script src="js/responsiveslides.min.js"></script>
-		<script>
-			// You can also use "$(window).load(function() {"
-			$(function () {
-			  // Slideshow 4
-			  $("#slider3").responsiveSlides({
-				auto: true,
-				pager:true,
-				nav:false,
-				speed: 500,
-				namespace: "callbacks",
-				before: function () {
-				  $('.events').append("<li>before event fired.</li>");
-				},
-				after: function () {
-				  $('.events').append("<li>after event fired.</li>");
-				}
-			  });
-		
-			});
-		 </script>
-	<!-- //responsiveslider -->
-	<!-- menu -->
-	<script>
-		$(document).ready(function () {
-		  $('.mobile-nav-button').on('click', function() {
-		  $( ".mobile-nav-button .mobile-nav-button__line:nth-of-type(1)" ).toggleClass( "mobile-nav-button__line--1");
-		  $( ".mobile-nav-button .mobile-nav-button__line:nth-of-type(2)" ).toggleClass( "mobile-nav-button__line--2");  
-		  $( ".mobile-nav-button .mobile-nav-button__line:nth-of-type(3)" ).toggleClass( "mobile-nav-button__line--3");  
-		  
-		  $('.mobile-menu').toggleClass('mobile-menu--open');
-		  return false;
-		}); 
-		});
-	</script>
-	<!-- //menu -->
-	<!-- flexSlider-for-grids-section -->
-		<script defer src="js/jquery.flexslider.js"></script>
-		<script type="text/javascript">
-			$(window).load(function(){
-			  $('.flexslider').flexslider({
-				animation: "slide",
-				start: function(slider){
-				  $('body').removeClass('loading');
-				}
-			  });
-			});
-	  </script>
-	<!-- //flexSlider-for-grids-section -->
-	<!-- flexSlider-for-menu-section -->
-	<script type="text/javascript">
-		$(window).load(function() {
-			$("#flexiselDemo1").flexisel({
-				visibleItems: 4,
-				animationSpeed: 1000,
-				autoPlay: true,
-				autoPlaySpeed: 3000,    		
-				pauseOnHover: true,
-				enableResponsiveBreakpoints: true,
-				responsiveBreakpoints: { 
-					portrait: { 
-						changePoint:480,
-						visibleItems: 2
-					}, 
-					landscape: { 
-						changePoint:640,
-						visibleItems:3
-					},
-					tablet: { 
-						changePoint:768,
-						visibleItems: 4
-					}
-				}
-			});
-			
-		});
-	</script>
-	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
-	<!-- //flexSlider-for-menu-section -->
-	<!-- start-smoth-scrolling -->
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-			});
-		});
-	</script>
-	<!-- start-smoth-scrolling -->
-	<!-- for-bottom-to-top smooth scrolling -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-		/*
-			var defaults = {
-			containerID: 'toTop', // fading element id
-			containerHoverID: 'toTopHover', // fading element hover id
-			scrollSpeed: 1200,
-			easingType: 'linear' 
-			};
-		*/								
-		$().UItoTop({ easingType: 'easeOutQuart' });
-		});
-	</script>
-	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-	<!-- //for-bottom-to-top smooth scrolling -->
-	<!-- Calendar 
-	<link rel="stylesheet" href="css/jquery-ui.css" />
-	<script src="js/jquery-ui.js"></script>
-		<script>
-			$(function() {
-			$( "#datepicker,#datepicker1,#datepicker2,#datepicker3" ).datepicker();
-			});
-		</script>
-	 //Calendar -->
-	<!-- video-js
-	<script src="js/jquery.vide.min.js"></script>
-	 //video-js  -->	
-	<!-- smoothbox -->
-	<script type="text/javascript" src="js/smoothbox.jquery2.js"></script>
-	<!-- //smoothbox -->
-	<!-- Time 
-	<script type="text/javascript" src="js/wickedpicker.js"></script>
-		<script type="text/javascript">
-			$('.timepicker').wickedpicker({twentyFour: false});
-		</script>
-	 //Time -->
+@include('includes.js')
 
 <!-- //js-scripts -->
 </body>

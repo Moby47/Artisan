@@ -13,6 +13,10 @@ return [
     | to have a conventional place to find your various credentials.
     |
     */
+    'elastic_email' => [
+        'key' => env('ELASTIC_KEY'),
+        'account' => env('ELASTIC_ACCOUNT')
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),

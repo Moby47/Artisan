@@ -2,21 +2,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>DutyPost - User Profile</title>
+<title>Artisan - User Profile</title>
 <!-- custom-theme -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Delightful Profile template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="keywords" content="Find Services, jobs around you with a simple intuative search pattern to redefine the 
+										way you get connected." />
 
 
-<!-- //custom-theme -->
-<link href="css/style2.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //unique profile view page-->
+<link href="{{asset('css/style2.css')}}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{asset('css/lightcase.css')}}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{{asset('css/easy-responsive-tabs.css')}}" />
 
-<!-- font-awesome-icons -->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<!-- others -->
+<link href="{{asset('css/font-awesome.css')}}" rel="stylesheet"> 
+<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" media="all" /> <!-- Bootstrap-Core-CSS -->
 <!-- //font-awesome-icons --> 
-<link href="css/lightcase.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css " />
+
+
 </head>
 <body>
 	<div class="main">	
@@ -24,15 +28,29 @@
 		<div class="w3_agile_main_grids">
 			<div class="w3layouts_main_grid_left">	
 				<div class="w3_main_grid_left_grid">	
-					<h2>Dera somebody</h2>
-					<p>Short personal statement.</p>
+					<h2>
+						@if($profile->fname)
+						{{$profile->fname}} {{$profile->lname}}
+						@else
+						No Name
+						@endif
+					</h2>
+					<p class='black'>@if($info->title){{$info->title}}@else N/A @endif</li></p>
+
+					@if($profile->image)
 					<div class="w3l_figure">
-						<img src="images/1.png" alt=" " />
+						<img src="/storage/profile_images/{{$profile->image}}" alt="{{$info->title}}" title="{{$profile->fname}} {{$profile->lname}} - {{$info->title}} "/>
 					</div>
+					@else
+					<div class="w3l_figure">
+							<img src="/storage/profile_images/noimage.jpg" alt="{{$info->title}}" title="{{$profile->fname}} {{$profile->lname}} - {{$info->title}} "/>
+						</div>
+					@endif
+
 					<ul class="agileinfo_social_icons">
-						<li><a href="#" class="w3_agileits_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href="#" class="wthree_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						<li><a href="#" class="agileinfo_google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+						<li><a href="http://{{$soc->fb}}" target='_blank' class="w3_agileits_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="http://{{$soc->tw}}" target='_blank' class="wthree_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li><a href="http://{{$soc->web}}" target='_blank' class="agileinfo_google"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
 			</div>
@@ -43,23 +61,70 @@
 							<li><i class="fa fa-user" aria-hidden="true"></i>About me</li>
 							<li><i class="fa fa-briefcase" aria-hidden="true"></i>my work</li>
 							<li><i class="fa fa-map-marker" aria-hidden="true"></i>Contact me</li>
+							
 						</ul>
 						<div class="resp-tabs-container hor_1">
 							<div class="agileits_main_grid_right_grid">	
+
+								@if(Auth()->check())
+
+									@if($profile->id == Auth()->user()->id)
+									<div class="banner">
+											<p>
+											<a href="/">Home</a>
+											<i class="fa fa-angle-right"></i>
+											<a href="/dashboard">Dashboard</a>
+											<i class="fa fa-angle-right"></i>
+											<span>Profile Details</span>
+											</p>
+										</div>
+										@else
+										<div class="banner">
+												<p>
+												<a href="/">Home</a>
+												<i class="fa fa-angle-right"></i>
+												<span>Profile Details</span>
+												</p>
+											</div>
+									@endif
+
+									@else
+									<div class="banner">
+											<p>
+											<a href="/">Home</a>
+											<i class="fa fa-angle-right"></i>
+											<span>Profile Details</span>
+											</p>
+										</div>
+
+									@endif
+									
+
 								<ul class='list-group'>
-									<li class='list-group-item'>Age - 47</li>
-									<li class='list-group-item'>State - Lagos</li>
-									<li class='list-group-item'>Town - Lekki</li>
-									<li class='list-group-item'>Services Category - PHOTOGRAPHY</li>
-									<li class='list-group-item'>days available - week days only</li>
-									<li class='list-group-item'>Service offer - only home service </li>
+									<li class='list-group-item'>Age - @if($profile->age){{$profile->age}}@else N/A @endif</li>
+									<li class='list-group-item'>
+										Sex - @if($profile->sex)
+
+										@if($profile->sex == 1)
+										Male
+										@elseif($profile->sex ==2)
+										Female
+										@endif
+										
+										@else
+										 N/A 
+										 @endif
+									</li>
+									<li class='list-group-item'>State - @if($info->state){{$info->state}}@else N/A @endif</li>
+									<li class='list-group-item'>Town - @if($info->town){{$info->town}}@else N/A @endif</li>
+									<li class='list-group-item'>Services Category - @if($info->category){{$info->category}}@else N/A @endif</li>
+									<li class='list-group-item'>days available - @if($profile->hrs){{$profile->hrs}}@else N/A @endif</li>
+									<li class='list-group-item'>Service offer - @if($profile->service){{$profile->service}}@else N/A @endif </li>
 								</ul>
 								<p class="agileinfo_para"> 
-									<i>Summary - Sed vitae hendrerit ex. Aliquam in tortor venenatis, iaculis nunc eu, 
-									vestibulum purus. Duis sed efficitur ipsum. Curabitur in turpis porta, 
-									tincidunt quam ac, consequat ante.</i></p>
+									<i>Summary - @if($info->job){{$info->job}}@else N/A @endif</li>.</i></p>
 								
-								<div class="agileits_skills">
+								<!--<div class="agileits_skills">
 									<br>
 									<h3>Skills</h3>
 									<div class="w3_agileits_skills_grid">
@@ -71,82 +136,139 @@
 											<li><label>Multimedia</label> <span></span> 85%</li>
 										</ul>
 									</div>
-								</div>
+								</div>-->
 							</div>
 							<div class="wthree_main_grid_right_grid">
-								<h3>My awesome work</h3>
+								<h3>My Awesome Works</h3>
 								<div class="w3_agileits_main_grid_work_grids">
+										
+										@if(Auth()->check())
+
+										@if($profile->id == Auth()->user()->id)
+										<div class="banner">
+												<p>
+												<a href="/">Home</a>
+												<i class="fa fa-angle-right"></i>
+												<a href="/dashboard">Dashboard</a>
+												<i class="fa fa-angle-right"></i>
+												<span>Profile Details</span>
+												</p>
+											</div>
+											@else
+											<div class="banner">
+													<p>
+													<a href="/">Home</a>
+													<i class="fa fa-angle-right"></i>
+													<span>Profile Details</span>
+													</p>
+												</div>
+										@endif
+	
+										@else
+										<div class="banner">
+												<p>
+												<a href="/">Home</a>
+												<i class="fa fa-angle-right"></i>
+												<span>Profile Details</span>
+												</p>
+											</div>
+	
+										@endif
+									
+									@if(count($works)>0)
+									@foreach($works as $w)
 									<div class="agile_main_grid_work_gridl">
-										<a href="images/1.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Easy Profile">
-											<img src="images/1.jpg" alt=" " />
-										</a>
-									</div>
-									<div class="agile_main_grid_work_gridl">
-										<a href="images/2.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Easy Profile">
-											<img src="images/2.jpg" alt=" " />
-										</a>
-									</div>
-									<div class="agile_main_grid_work_gridl">
-										<a href="images/3.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Easy Profile">
-											<img src="images/3.jpg" alt=" " />
-										</a>
-									</div>
-									<div class="agile_main_grid_work_gridl">
-										<a href="images/4.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Easy Profile">
-											<img src="images/4.jpg" alt=" " />
-										</a>
-									</div>
-									<div class="agile_main_grid_work_gridl">
-										<a href="images/5.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Easy Profile">
-											<img src="images/5.jpg" alt=" " />
-										</a>
-									</div>
-									<div class="agile_main_grid_work_gridl">
-										<a href="images/6.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Easy Profile">
-											<img src="images/6.jpg" alt=" " />
-										</a>
-									</div>
-									<div class="agile_main_grid_work_gridl">
-										<a href="images/7.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Easy Profile">
-											<img src="images/7.jpg" alt=" " />
-										</a>
-									</div>
-									<div class="agile_main_grid_work_gridl">
-										<a href="images/8.jpg" class="showcase" data-rel="lightcase:myCollection:slideshow" title="Easy Profile">
-											<img src="images/8.jpg" alt=" " />
-										</a>
-									</div>
+											<a href="/storage/user_images/{{$w->image}}" class="showcase" data-rel="lightcase:myCollection:slideshow"  title="{{$w->title}}">
+												<img src="/storage/user_images/{{$w->image}}" alt='{{$w->title}}' class='img-responsive box'/>
+											</a>
+										</div>
+									@endforeach
+									@else
+									<div class='alert alert-info text-center'>
+											No Picture(s) In Gallery, Yet.
+										 </div> 
+									@endif
+									
+
 									<div class="clear"> </div>
 								</div>
 							</div>
 							<div class="wthree_main_grid_right_grid">
 								<h3>Contact Me</h3>
+								
+								@if(Auth()->check())
+
+								@if($profile->id == Auth()->user()->id)
+								<div class="banner">
+										<p>
+										<a href="/">Home</a>
+										<i class="fa fa-angle-right"></i>
+										<a href="/dashboard">Dashboard</a>
+										<i class="fa fa-angle-right"></i>
+										<span>Profile Details</span>
+										</p>
+									</div>
+									@else
+									<div class="banner">
+											<p>
+											<a href="/">Home</a>
+											<i class="fa fa-angle-right"></i>
+											<span>Profile Details</span>
+											</p>
+										</div>
+								@endif
+
+								@else
+								<div class="banner">
+										<p>
+										<a href="/">Home</a>
+										<i class="fa fa-angle-right"></i>
+										<span>Profile Details</span>
+										</p>
+									</div>
+
+								@endif
+
 								<form action="#" method="post">
 									<div class="agileits_w3layouts_contact_left">
-										<input type="text" name="Name" placeholder="Name" required="">
-										<input type="email" name="Email" placeholder="Email" required="">
-										<textarea placeholder="Message..." required=""></textarea>
+											@if($profile->phone)
+											<a class='btn text-center btn-block btn-info' href='tel:+23{{substr($profile->phone,1,11)}}'>Call</a><br>
+											<a class='btn text-center btn-block btn-info' href='sms:+234{{substr($profile->phone,1,11)}}?body=Hello'>SMS</a><br>
+											<a class='btn text-center btn-block btn-info' href='intent://send/+234{{substr($profile->phone,1,11)}}#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end'>Whatsapp</a><br>
+											@else
+											<div class='alert alert-info text-center'>
+													No Phone Number Added, Yet.
+												 </div> 
+											@endif
+											<p>@if($info->location) Location Summary - {{$info->location}}@else Location Summary - N/A @endif</p>
 									</div>
 									<div class="agileits_w3layouts_contact_right">
-											<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77944.63844269582!2d4.828574749828488!3d52.37459125089173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c63fb5949a7755%3A0x6600fd4cb7c0af8d!2sAmsterdam%2C+Netherlands!5e0!3m2!1sen!2sin!4v1485595363072" style="border:0"></iframe>
-										</div>
-									<div class="clear"> </div>
-									<div class="agile_submit">
-										<input type="submit" value="Send">
+										@if($location->lat == 0)
+										<div class='alert alert-info text-center'>
+												Map Not Set, Yet.
+											 </div> 
+										@else
+											<div style="width: 100%px; height: 250px;">
+													{!! Mapper::render() !!}
+												</div>	
+												@endif
 									</div>
+									<div class="clear"> </div>
+									
 								</form>
+								<br>
 								<div class="wthree_tab_grid">
 									<ul class="wthree_tab_grid_list">
 										<li><i class="fa fa-mobile" aria-hidden="true"></i></li>
-										<li>Mobile<span>+2348047474747</span></li>
+									<li>Mobile<span>	@if($profile->phone) {{$profile->phone}} @else <span> N/A</span> @endif</span></li>
 									</ul>
 									<ul class="wthree_tab_grid_list">
 										<li><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
-										<li>Mail Me<span><a href="mailto:info@example.com">dera@example.com</a></span></li>
+									<li>Mail Me<span><a href="mailto:{{$profile->email}}" class='line'>Here</a></span></li>
 									</ul>
 									<ul class="wthree_tab_grid_list">
 										<li><i class="fa fa-map-marker" aria-hidden="true"></i></li>
-										<li>Address<span>123 Avenue, Lekki phase1.</span></li>
+										<li>Address<span> @if($info->address) {{$info->address}} @else <span> N/A</span> @endif</span></li>
 									</ul>
 									<div class="clear"> </div>
 								</div>
@@ -159,15 +281,33 @@
 		</div><!--	<p>© 2017 Delightful Profile. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 		-->
 		<div class="agileits_copyright">
-				<p>© 2018 Duty Post . All Rights Reserved  </p>
+				<p>© 2019 Artisan. All Rights Reserved  </p>
 		</div>
 	</div>
 	<!-- js -->
-	<script src="js/jquery.min.js"> </script>
+	<!--sharethis-->
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b47c22832e60f0011a5d8e9&product=social-ab' async='async'></script>	
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5b47c7ae4af8e57442dc98f0/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+
+	<script src="{{asset('js/jquery.min.js')}}"> </script>
 <!-- //js -->
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
-	<script src="js/easyResponsiveTabs.js"></script>
+	<script src="{{asset('js/easyResponsiveTabs.js')}}"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			//Horizontal Tab
@@ -187,8 +327,8 @@
 		});
 	</script>
 	<!-- light-case -->
-		<script src="js/lightcase.js"></script>
-		<script src="js/jquery.events.touch.js"></script>
+		<script src="{{asset('js/lightcase.js')}}"></script>
+		<script src="{{asset('js/jquery.events.touch.js')}}"></script>
 		<script>
 			$('.showcase').lightcase();
 		</script>

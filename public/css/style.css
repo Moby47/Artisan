@@ -9,6 +9,14 @@ h1, h2, h3 {margin: 0;}
 ul, ol {margin: 0;padding: 0;}
 p {margin: 0;}
 
+.left{
+    padding-left:6% !important;
+}
+
+.box{
+    height: 180px !important;
+}
+
 html, body{
   	font-family:'Montserrat-Regular';
     font-size: 100%;
@@ -2380,8 +2388,8 @@ ul.new {
   margin-bottom:5px;
 }
 .navbar-default .navbar-toggle {
-	border-color: #1ABC9C;
-    background-color: #1ABC9C !important;
+	border-color: black;
+    background-color: black !important;
     margin-right: 16px;
     margin-top: 13px;
 }
